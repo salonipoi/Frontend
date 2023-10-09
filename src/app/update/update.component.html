@@ -1,0 +1,20 @@
+      <h3>Update Product</h3>
+      <form (ngSubmit)="save()" >
+        Product ID:
+        <input name="id" [(ngModel)]="p.id" class="form-control" >
+        <br>
+        Product Name:
+        <input name="name" [(ngModel)]="p.name"  class="form-control" >
+        <br>
+        Product Category:
+        <input name="category" [(ngModel)]="p.category"  class="form-control">
+        <br>
+        Product Image:
+        <input type="text" name="image" [(ngModel)]="p.image"  class="form-control">
+        <br>
+        Product Price:
+        <input name="price" [(ngModel)]="p.price"  class="form-control" >
+        <br>
+        <button type="submit" class="btn btn-primary">Update Product</button>
+    </form>
+    <router-outlet></router-outlet>

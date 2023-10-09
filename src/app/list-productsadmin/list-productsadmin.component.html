@@ -1,0 +1,25 @@
+<h3>List of Products</h3>
+<br>
+<table class="table table-bordered ">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of products ">
+      <td>{{p.name}}</td>
+      <td> <img src="{{p.image}}" height="100" width="100" alt="No image"> </td>
+      <td>{{p.category}}</td>
+      <td>{{p.price}}</td>
+      <td><button class="btn btn-primary" (click)="update(p)">Update</button></td>
+      <td><button class="btn btn-danger" (click)="delete(p.id)">Delete</button></td> 
+
+    </tr>
+  </tbody>
+</table>

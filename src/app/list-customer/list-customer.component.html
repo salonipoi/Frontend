@@ -1,0 +1,42 @@
+
+      <h3>List of Customers</h3>
+
+      <br>
+
+      <table class="table table-bordered table-dark">
+
+        <thead>
+
+        <tr>
+
+            <th>Customer Id</th>
+
+            <th>Name</th>
+
+            <th>Mobile</th>
+
+            <th>Email</th>
+
+            <th>Password</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody><tr *ngFor="let c of customers">
+
+            <td>{{c.custid}}</td>
+
+            <td> {{c.name}} </td>
+
+            <td>{{c.mobile}}</td>
+
+            <td>{{c.email}}</td>
+
+            <td>*********</td>
+
+            </tr>
+
+        </tbody>
+
+    </table> 

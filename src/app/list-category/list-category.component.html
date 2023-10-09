@@ -1,0 +1,69 @@
+<hr>
+
+<form (ngSubmit)="search()">
+
+    <label>Category:</label>&nbsp;
+
+    <input name="category"[(ngModel)]="category" placeholder="Category" required list="categories">
+
+    <datalist id="categories">
+
+        <option *ngFor="let c of cat" [value]="c"></option>
+
+    </datalist>
+
+    &nbsp;&nbsp;
+
+    <button class="btn btn-success" type="submit">Search Products</button>
+
+    </form>
+
+    <hr>
+
+    <table class="table table-bordered">
+
+        <thead>
+
+            <tr class="table-primary">
+
+                <th>Product Id</th>
+
+                <th>Name</th>
+
+                <th>Category</th>
+
+                <th>Price</th>
+
+                <th>Available</th>
+
+                <th>Image</th>
+
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor="let p of products">
+
+                <td>{{ p.id }}</td>
+
+                <td>{{ p.name }}</td>
+
+                <td>{{ p.category }}</td>
+
+                <td>{{ p.price }}</td>
+
+                <td>{{ (p.available)?"Yes":"No" }}</td>
+
+                <td><img src="{{p.image}}" height="100" width="100" alt="image not available"></td>
+
+                <td><button class="btn btn-primary" (click)="add(p.id)">Add To Cart</button></td>
+
+            </tr>
+
+        </tbody>
+
+    </table>

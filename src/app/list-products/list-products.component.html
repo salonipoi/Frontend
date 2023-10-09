@@ -1,0 +1,37 @@
+<!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Customer dashboard</a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/customer-dashboard/list-products']">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/customer-dashboard/list-category']">Search By Category</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/customer-dashboard/cart']">Shopping cart</a>
+      </li>
+      </ul>
+      </nav>
+      <br> -->
+      <h3>List of Products</h3>
+      <br>
+      <table class="table table-bordered ">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody><tr *ngFor="let p of products">
+            <td>{{p.name}}</td>
+            <td> <img src="{{p.image}}" height="100" width="100" alt="Bat image"> </td>
+            <td>{{p.category}}</td>
+            <td>{{p.price}}</td>
+            <td><button class="btn btn-primary" (click)="add(p.id)">Add To Cart</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <router-outlet></router-outlet>
